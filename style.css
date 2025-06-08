@@ -1,0 +1,198 @@
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Flama', sans-serif
+}
+
+
+.wrapper {
+    background-color: #14161c;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.wrapper h5 {
+    color: rgb(146, 139, 139);
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #1c1e27;
+    color: rgb(146, 139, 139);
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar h5:hover {
+    color: rgb(201, 201, 201);
+}
+
+.navbar h5 {
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    gap: 20px;
+
+
+    /* no select code from: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+#open-case-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: rgb(255, 203, 31);
+    box-shadow: 0 2px rgb(139, 112, 22);
+    color: rgb(34, 33, 33);
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+
+#open-case-button:hover {
+    background-color: rgb(255, 218, 95);
+}
+
+#cases-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* Left-align the children */
+    align-items: center;
+    overflow-x: scroll;
+    /* Allow horizontal scroll */
+    overflow-y: hidden;
+    background-color: rgb(25, 26, 29);
+    width: 50vw;
+    height: 25vh;
+    padding: 20px;
+    border-radius: 2.5px;
+    gap: 10px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+
+    /* Optional: snap for clean stop */
+}
+
+.case {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.case img {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(50% 50% at 50% 50%, rgb(91, 136, 168, 0.4) 0%, rgba(74, 34, 34, 0) 100%);
+}
+
+
+.container h2 {
+    position: relative;
+    top: 0px;
+    right: 0;
+    left: -20vw;
+    /* really weird method but i hate css */
+    color: rgb(224, 224, 224);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+
+#case-marker {
+    position: absolute;
+    /*left: 97.6%;*/
+    left:50%;
+    top:28vh;
+    transform: translate(-50%, 0%);
+    background-color: aliceblue;
+    width: 2.5px;
+    border-radius: 2px;
+    height: 50px;
+    z-index: 11;
+}
+
+
+#cases-container::-webkit-scrollbar {
+    display: none;
+}
+
+#temp-case {
+    width: 100%;
+    height: 100%;
+}
+
+
+.chosen {
+    scale: 1.1;
+    transition: 0.3s;
+}
+
+
+#job-application {
+    z-index: -1;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: large;
+    background-color: white;
+    width: 650px;
+    height: 90%;
+    border-radius: 1.25px;
+    padding: 20px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
