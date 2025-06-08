@@ -56,6 +56,7 @@ cases[targetIndex].element.children[0].id = "temp-case"
 executeButton.onclick = () => {
     if (isRunning) return;
     isRunning = true;
+    
     executeButton.disabled = true;
     executeButton.style.opacity = '0.5';
 
@@ -65,7 +66,7 @@ executeButton.onclick = () => {
     let boxOffset = (targetCase.clientWidth / 2) - 15 // 15px is the margin on the left and right side of the case just so it doesnt make confusion aboout which case has been picked
     // could also do as empire does and scale the image a little to show which skin is current picked;
     let randomOffset = Math.floor(Math.random() * (boxOffset * 2)) - boxOffset;
-    console.log(randomOffset);
+    //console.log(randomOffset); debug
 
     const scrollOffset = targetCase.offsetLeft - (casesContainer.clientWidth - targetCase.clientWidth / 2) + randomOffset;
 
